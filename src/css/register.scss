@@ -1,0 +1,84 @@
+@import"./component/style.scss";
+body{
+    a{
+        text-decoration: none;
+        color: #e8380d;
+        font-size: 12px;
+    }
+    height: 100%;
+    background:#f5f5f5;
+    .main{
+        display:flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        background: white;
+        width:850px;
+        height: 533px;
+        margin:60px auto 40px auto;
+        font-size: 13px;
+        color: #666666;
+      
+        .logo{
+         
+            background: rebeccapurple;
+            width: 100%;
+            height: 55px;
+            background: url(/images/nubia-logo.png) center -47px no-repeat;
+        }
+        .form{
+            display:flex;
+            flex-flow: column;
+            justify-content: space-between;
+            width: 360px;
+            height: 260px;
+            margin: 0 auto;
+            label{
+                position: relative;
+                span{
+                    display:none;
+                    color: #e8380d;
+                    position: absolute;
+                    right: -93px;
+                    top: 21px;
+                }
+            }
+            .ac{
+                span{
+                    display: block;
+                }
+            }
+            input{
+                width: 360px;
+                height: 50px;
+            }
+        }
+        .checkbox{
+            margin: 0 auto;
+            width: 360px;
+        }
+    }
+    p{
+        text-align: center;
+        font-size: 12px;
+        color:#cccccc;
+    }
+    button{
+        width: 360px;
+        height: 50px;
+        margin: 10px 0 20px 0;
+        background: #e8380d;
+        font-size: 18px;
+        color: #fff;
+        border: none;
+        
+    }
+    .p-login{
+        width: 360px;
+        color: #666666;
+        span{
+            float: right;
+        }
+    }
+    
+}

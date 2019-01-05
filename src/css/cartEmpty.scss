@@ -1,0 +1,35 @@
+@import"./component/footer.scss";
+@import"./component/header.scss";
+@import"./component/style.scss";
+main{
+    width: 100%;
+    .cart-empty{
+        margin: 0 auto;
+        width: 600px;
+        height: 400px;
+        background:  url(/images/empty_icon.jpg) right 50px no-repeat;
+        .empty-shop{
+            float: left;
+            width: 270px;
+            height: 145px;
+            margin-top: 130px;
+            h1{
+                font-size: 27px;
+                font-weight: 100;
+                color: #666666;
+                margin-bottom: 20px;
+                line-height: 40px;
+                
+            }
+            a{
+                text-align: center;
+                font-size: 13px;
+                background:#e8380d;
+                border-radius: 15px;
+                color: #fff;
+                padding: 10px 40px ;
+                
+            }
+        }
+    }
+}
