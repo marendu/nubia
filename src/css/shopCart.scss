@@ -1,6 +1,7 @@
 @import"./component/footer.scss";
 @import"./component/header.scss";
 @import"./component/style.scss";
+@import"./component/cartEmpty.scss";
 main{
     .cart{
         width: 1233px;
@@ -22,6 +23,12 @@ main{
         }
         tbody{
              tr{
+                 td{
+                     img{
+                         width: 100px;
+                         height: 100px;
+                     }
+                 }
                 .mleft{
                     text-align: left;
                     padding-left: 10px;

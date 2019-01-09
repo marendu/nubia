@@ -1,0 +1,12 @@
+
+<script type="text/html" id="list-templates">
+    
+    {{each list item i}}
+    <li>
+            <a href="/html/Details.html?id={{ item.id }}">
+                <img src="{{item.img}}">
+                <span>{{ item.title }}</span>
+            </a>
+        </li>
+    {{/each}}
+</script>

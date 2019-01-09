@@ -19,13 +19,85 @@ header>.hd-wrap>ul{
     align-items: center;
 }
 header>.hd-wrap>ul>li{
+    cursor:pointer;
  padding:18px 2% 17px 2%;
+    .select-wrap{
+        position:absolute;
+        left: 0;
+        height: 0;
+        top: 65px;
+        background: rgba(49, 49, 49, 0.95);
+        width:100%;
+        z-index: 99;
+        .select{
+            position: relative;
+                width: 1170px;
+                height: 100%;
+                margin-left: auto;
+                margin-right: auto;
+                overflow: hidden;
+                >.prev{
+                    width: 20px;
+                    height: 20px;
+                    position: absolute;
+                    left: 0;
+                    top:50%;
+                    margin-top: -18px;
+                    z-index: 9999;
+                }
+                >.next{
+                    width: 20px;
+                    height: 20px;
+                    position: absolute;
+                    right: 0;
+                    top:50%;
+                    margin-top: -18px;
+                    z-index: 9999;
+                }
+                ul{
+                    position: absolute;
+                    top: 40px;
+                    left: 0;
+                    width: 1000%;
+                    li:first-child{
+                        margin-left: 0;
+                    }
+                    li{
+                        margin-left: 45px;
+                        width: 195px;
+                        height: 195px;
+                        text-align: center;
+                        float: left;
+                        a{
+                            color: #ffffff;
+                            img{
+                                height: 120px;
+                                width: auto;
+                            }
+                            span{
+                                display:block;
+                                font-size: 13px;
+                                margin-top: 15px;
+                            }
+                        }
+                    }
+                }
+        }
+    }
 }
 header>.hd-wrap>ul>li>a{
+    display: block;
+    width: 100%;
+    height: 100%;
     font-size: 13px;
     color: #fff;
     font-weight: 300;
-
+   
+}
+header>.hd-wrap>ul>li:hover{
+    a{
+        color: #ccc;
+    }
 }
 header>.hd-wrap>ul>.user{
  padding:18px 2px 17px 2%;

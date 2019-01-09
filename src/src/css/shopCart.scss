@@ -1,0 +1,170 @@
+@import"./component/footer.scss";
+@import"./component/header.scss";
+@import"./component/style.scss";
+@import"./component/cartEmpty.scss";
+main{
+    .cart{
+        width: 1233px;
+        height: 180px;
+        margin: 0 auto;
+        background: url(/images/bg_payorder_1.png) center center no-repeat;
+    }
+    table{
+        width: 100%;
+        border: 1px solid #ccc;
+        border-collapse: collapse;
+        border-spacing: 0;
+        font-size: 14px;
+        text-align: center;
+        color: #666666;
+        a{
+            font-size: 16px;
+            color: #000000;
+        }
+        tbody{
+             tr{
+                .mleft{
+                    text-align: left;
+                    padding-left: 10px;
+                    ul{
+                        li{
+                           >span{
+                            background: #cd0400;
+                            padding:3px 10px 3px 10px;
+                               color: #fff;
+                           }
+                            a{ 
+                                  font-size: 13px;
+                                color: #e95f46;
+                            }
+                        }
+                }
+            }
+            .inputs{
+                display:inline-block;
+                width: 110px;
+                height: 27px;
+                border-radius: 8px;
+                border: 1px solid #666666;
+                span{
+                    display: inline-block;
+                    width: 23px;
+                    height: 33px;
+                }
+                input{
+                    text-align: center;
+                    border: 1px solid #666666;
+                    border-top: none;
+                    border-bottom: none;
+                    width: 50px;
+                    height: 27px;
+                }
+                }
+                
+            }
+           
+        }   
+          
+            
+           
+        }
+        .Settlement{
+            border: 1px solid #e7e7e7;
+            text-align: center;
+            height: 70px;
+            border-top: none;
+            margin: 10px auto 10px;
+            line-height: 70px;
+            a{  display: inline-block;
+             font-size: 14px;
+                width: 100px;
+                height: 43px;
+                border: 1px solid #e8380d;
+                color: #e8380d;
+                line-height: 43px;
+                border-radius: 20px;
+                margin-right: 40px;
+
+            }
+            span{
+                font-size: 14px;
+                display: inline-block;
+                width: 100px;
+                height: 43px;
+                background: #e8380d;
+                color: #fff;
+                line-height: 43px;
+                border-radius: 20px; 
+            }
+        }
+        .hotshop{
+            width: 1170px;
+            min-height: 1px;
+            margin: 0 auto;
+           > p{
+                background: #fafafa;
+                height: 67px;
+                width: 1150px;
+                padding-left: 20px;
+                line-height: 67px;
+                font-size: 17px;
+                color: #666666;
+            }
+            ul{
+                display: flex;
+                li{
+                    dl{
+                        width: 291px;
+                        height: 418px;
+                        border:1px solid #e7e7e7;
+                        dd{width: 291px;
+                            text-align: center;
+                            height: 224px;
+                            img{
+                                width: 224px;
+                                height: 224px;
+                            }
+                        }
+                        dt{
+                            .move-wrap{
+                                margin: 0 auto;
+                                width: 190px;
+                                height: 2px; 
+                                margin-bottom: 20px;
+                                border-radius: 4px;
+                                background-color: #f5f5f5;
+                                .move{
+                                    width: 40px;
+                                    height: 2px;
+                                    float: left;
+                                    background: #cd0400;
+                                }
+                                margin-bottom: 20px;
+                            }
+                            p{  
+                                margin-left:48px;
+                                font-size: 12px;
+                                color: #34383d;
+                                margin-bottom: 22px;
+                                span{
+                                    color: #666666;
+                                }
+                            }
+                            .addcart{
+                                text-align: center;
+                                margin-left: 95px;
+                                display: inline-block;
+                                width: 93px;
+                                height: 28px;
+                                border: 1px solid #cccccc;
+                                color: #666666;
+                                font-size: 12px;
+                                border-radius: 4px;
+                                line-height:28px; 
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }

@@ -1,0 +1,24 @@
+
+<script type="text/html" id="list-template">
+    
+    {{each list item i}}
+                <li>
+                    <div class="list-goods">
+                        <div class="list-top">
+                                <a  href="/html/Details.html?id={{ item.id }}"><img class="buyimg" src="{{item.img}}"></a>
+                            <div class="list-top-botm">
+                                <p class="buytitle">{{ item.title }}</p>
+                                <span class="buydescribe">{{ item.describe }}</span>
+                            </div>
+                        </div>
+                        <div class="list-botm">
+                            <div class="Price"><span>￥</span><span class="buyprice">{{item.price}}</span></div>
+                            <div class="price-btn">
+                                <a class="btn-info" href="/html/Details.html">查看详情</a>
+                                <a class="btn-sell buybtn" href="##">立即购买</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+    {{/each}}
+</script>

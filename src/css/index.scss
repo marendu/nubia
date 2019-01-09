@@ -1,6 +1,7 @@
 @import"./component/footer.scss";
 @import"./component/header.scss";
 @import"./component/style.scss";
+@import "./component/Carousel.scss";
 main{
     width: 100%;
     .carousel{
@@ -13,6 +14,7 @@ main{
         margin: 0 auto;
         width: 1200px;
         min-height: 1px;
+        overflow: hidden;
         h2{
             color: #7e7e7e;
              font-size: 24px;
@@ -31,11 +33,12 @@ main{
         .hot-list{
                 min-height: 1px;
                 display: flex;
+                flex-wrap:wrap;
                 justify-content: space-between;
                 text-align: center;
             li{
-                width: 290px;
-                height: 450px;
+                min-width: 290px;
+                min-height: 450px;
                 background: #f4f3ef;
                 margin-bottom: 13px ;
                 .list-goods{
@@ -91,10 +94,18 @@ main{
                                 color: #f35c49;
                             }
                             .btn-sell{
-                                background: #f35c49 !important;
-                                color: #fff !important;
+                                background: #f35c49 ;
+                                color: #fff;
                             }
                        }
+                    }
+                    .ac{
+                        .Price{
+                            display: none;
+                        }
+                        .price-btn{
+                            display: block;
+                        }
                     }
 
                 }

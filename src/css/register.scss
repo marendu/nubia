@@ -39,7 +39,7 @@ body{
                     display:none;
                     color: #e8380d;
                     position: absolute;
-                    right: -93px;
+                    right: -130px;
                     top: 21px;
                 }
             }
@@ -77,6 +77,10 @@ body{
         width: 360px;
         color: #666666;
         span{
+            cursor: pointer;
+            float: right;
+        }
+        a{
             float: right;
         }
     }

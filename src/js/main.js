@@ -1,5 +1,5 @@
 require(["./config"],()=>{
-    require(["jquery","header","footer","index"],()=>{
+    require(["jquery","header","footer","index","carousel","template"],()=>{
 
     })
 })
