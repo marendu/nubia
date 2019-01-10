@@ -1,0 +1,17 @@
+<script type="text/html" id="shop-template">
+    
+    {{each list item i}}
+    <li data_id={{item.id}}>
+            <dl>
+                <dd><a href="##"><img src="{{item.img}}"></a> </dd>
+                <dt>
+                    <div class="move-wrap">
+                        <div class="move"></div>
+                    </div>
+                    <p>{{item.title}}<br><span>￥{{item.price}}</span></p>
+                    <span class="addcart">加入购物车</span>
+                </dt>
+            </dl>
+        </li>
+    {{/each}}
+</script>

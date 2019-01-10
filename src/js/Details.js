@@ -7,8 +7,11 @@ require(["./config"],()=>{
             item.init(url.rap+"/details-right","#goods-imgs","goods-img","goods-template");
             item.init(url.rap+"/details-right","#goods-img2","goods-img","goods-template");
 
-
-            buycart.init();
+            $(".buycart").on("click",function(){
+                console.log(222)
+                buycart.init();
+            })
+           
             console.log(buycart);
             //导航
             var li_this=null;

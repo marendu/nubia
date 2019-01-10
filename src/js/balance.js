@@ -10,6 +10,7 @@ require(["./config"],()=>{
 
             }
             init(){
+                var prices=0;
                 var str2 ="";
                 for (var value of this.jison) {
                     str2+=` <tr>
@@ -25,7 +26,7 @@ require(["./config"],()=>{
                     <td>${value.num}</td> 
                     <td>￥<span>${value.price}</span></td>
                 </tr>`
-                $(".allprice").text("￥"+value.prices);
+                $(".allprice").text("￥"+(prices+=parseInt(value.price)));
                   }
                    $("table tbody").html(str2);
             }

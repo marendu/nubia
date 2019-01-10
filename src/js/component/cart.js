@@ -23,7 +23,7 @@ define(["jquery","cookie"], function($,cookie) {
     </tr>`
           }
            $("table tbody").html(str2);
-           this.sums();
+           this.sums();//页面刷新调用计算总价
            //给table绑定点击事件；
 
            table[0].onclick = function (e) {
@@ -55,9 +55,6 @@ define(["jquery","cookie"], function($,cookie) {
                         })
                         _this.jison[atr_i].num =n;
                         _this.sums();            //计算总价
-                        let allPrice = Number(tr.find(".allprice").text()) ;
-                        _this.jison[atr_i].prices =allPrice;
-
                             _this.cook();      //转换cookie
                           
                     break;
@@ -75,9 +72,7 @@ define(["jquery","cookie"], function($,cookie) {
                         _this.jison[atr_i].num =n;
 
                         _this.sums();            //计算总价
-                        let allPrice = Number(tr.find(".allprice").text()) ;
-                        _this.jison[atr_i].prices =allPrice;
-
+                     
                             _this.cook();      //转换cookie
 
                 break;
@@ -124,7 +119,12 @@ define(["jquery","cookie"], function($,cookie) {
             var trs = $("table tbody tr");
             this.jison = JSON.stringify(this.jison);
            console.log(1,this.jison)
-            trs.length ? $.cookie("buycart",this.jison, {expires: 3,path:"/"}) : $.cookie("buycart", {expires: -1,path:"/"});
+           if(trs.length){
+            $.cookie("buycart",this.jison, {expires: 3,path:"/"}) 
+           }else{
+            $.cookie("buycart", this.jison,{expires: -1,path:"/"});
+             $("main").load("/html/component/cartEmpty.html");
+           }
        }
        
        fn() {   //将JSON字符转换为json对象；

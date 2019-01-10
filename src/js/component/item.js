@@ -1,4 +1,4 @@
-define(["jquery", "template","buy"], ($, template,buy) => {
+define(["jquery", "template","buy","cart"], ($, template,buy,cart) => {
 	function Item(){
 		this.flag=true;
 	}
@@ -35,7 +35,9 @@ define(["jquery", "template","buy"], ($, template,buy) => {
 						if(item==="item.1"){
 							_this.hover_1();
 						}
-						
+						if(item==="Shop-item"){
+							_this.hover_2(res);
+						}
 						if(item==="details_right1"){
 							_this.details();
 						}
@@ -49,6 +51,7 @@ define(["jquery", "template","buy"], ($, template,buy) => {
 		})
 		
 	}
+
 	Item.prototype.details = function(){
         //right点击事件
         $(".main-right ul li").on("click",function(){
@@ -82,6 +85,31 @@ define(["jquery", "template","buy"], ($, template,buy) => {
 		 })
 
 	}
+	Item.prototype.hover_2=function(res){
+	var shopli = $("#hotshop ul li")
+	shopli.hover(function(){
+		$(this).find(".move").stop().animate({width:190},400)
+	},function(){
+		$(this).find(".move").stop().animate({width:40},400)
+
+	})
+	shopli.find(".addcart").on("click",function(){
+		var data_id = $(this).parents("li").attr("data_id")
+		var cartcookie= $.cookie("buycart");
+		var jison= JSON.parse(cartcookie);
+		
+		// console.log(cartcookie);
+		for(var value of res.res_body.data){
+			if(value.id == data_id){
+				jison.push(value);
+				jison = JSON.stringify(jison);
+				$.cookie("buycart",jison, {expires: 3,path:"/"}) 
+				cart.init();
+			}
+		}
+	})
+	
+}
 	Item.prototype.hover_1=function(){
 		$(".prev").on("click",function(){
 			let ul =$(this).parent().find("ul");

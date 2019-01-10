@@ -40,12 +40,10 @@ define(["jquery","cookie"], function($,cookie) {
                obj.id = ali.attr("data-id");
                obj.img = ali.find(".buyimg").attr("src");
                obj.price =ali.find(".buyprice").text();
-               obj.prices =ali.find(".buyprice").text();
                obj.describe =ali.find(".buytitle").text()+ali.find(".buydescribe").text()
                obj.num = data_num;
                 console.log(data_num);
                if(data_num===1){
-                   alert(1)
                    asum.push(obj);
                }
             console.log(obj);

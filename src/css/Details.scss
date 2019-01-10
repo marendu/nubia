@@ -115,20 +115,15 @@ main{
             .main-rightinner{
                 width: 568px;
                 margin: 0 auto;
-                >.p1{
+                .p1{
                     font-size: 28px;
                     border-bottom: 1px solid #d7d7d7;
-                    >span{
+                    span{
                         font-size: 23px;
                         color: #ff6700;
                         margin-left:10px;
                     }
-                    a{
-                        font-size: 13px;
-                        color: #999999;
-                        float: right;
-                        margin-top: 20px;
-                    }
+                  
                 }
                 .p2{
                     height: 55px;

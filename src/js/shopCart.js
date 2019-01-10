@@ -1,17 +1,11 @@
 require(["./config"],()=>{
-    require(["jquery","cart","header","footer","cookie"],($,cart)=>{
+    require(["jquery","cart","item","url","header","footer","cookie"],($,cart,item,url)=>{
         $(function(){
-        if($.cookie("cart")){
+        if($.cookie("buycart")){
             cart.init();
-            var shopli = $("#hotshop ul li")
+            item.init(url.rap+"/shop","#hotshops","Shop-item","shop-template");
 
-            shopli.hover(function(){
-
-                $(this).find(".move").stop().animate({width:190},400)
-            },function(){
-                $(this).find(".move").stop().animate({width:40},400)
-
-            })
+         
         }else {
             $("main").load("/html/component/cartEmpty.html")
         }
