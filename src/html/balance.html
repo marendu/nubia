@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/balance.css">
+    <script src="/libs/require.js" data-main="/js/balance.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <header></header>
+    <main>
+            <div class="cart"></div>
+
+            <div class="wrap">
+                <div class="ads">
+                    <h2>我的地址</h2>
+                    <div class="add-ads_wrap"><span class="add_ads">使用其地址</span></div>
+                </div>
+                <div class="pay">
+                        <h2>支付方式</h2>
+                        <div class="pay_wrap"><p>
+                                <input type="radio" name="payment" class="payments" value="alipay">
+                                <label for="payment checked"><span>在线支付</span></label>
+                        </p></div>
+                    </div>
+                    <div class="pay time">
+                            <h2>配送时间</h2>
+                            <div class="pay_wrap"><p>
+                                    <input type="radio" name="time" checked>
+                                    <label for="time"><span>工作日、双休日与假日均可送货</span></label>
+                                    <input type="radio" name="time">
+                                    <label for="time"><span>只工作日送货(双休日、假日不配送)</span></label>
+                                    <input type="radio" name="time">
+                                    <label for="time"><span>只双休日、假日送货(工作日不配送)</span></label>
+                            </p></div>
+                        </div>
+                        <div class="pay nvoice">
+                                <h2>发票信息</h2>
+                                <div class="pay_wrap"><p>
+                                        <span>发票类型：</span> <input type="radio" checked>
+                                       <label ><span>电子发票</span></label>
+                                </p></div>
+                                <div class="pay_wrap"><p>
+                                        
+                                        <span>发票抬头：</span>
+                                        <input type="radio" name="nvoice" checked >
+                                        <label for="nvoice"><span>个人</span></label>
+                                        <input type="radio" name="nvoice">
+                                        <label for="nvoice"><span>单位 （请确认单位名称和纳税人识别号正确,以免因名称错误耽搁您的报销）</span></label>
+                                </p></div>
+                            </div>
+                <h2>商品清单 <a href="/html/ShopCart.html">修改清单</a></h2>
+                    <table rules=all>
+                            <thead>
+                                    <th width="41%">商品名称</th>
+                                    <th width="20%">单价</th>
+                                    <th width="19%">数量</th>
+                                    <th width="20%">小计</th>
+                            </thead>
+                            <tbody>
+                                    <!-- <tr>
+                                        <td >
+                                            <div >
+                                                <img src="http://oss.static.nubia.cn/pic/150103807291.jpg?imageView2/2/w/100/h/100/format/png">
+                                            </div>
+                                             <p>
+                                                 努比亚蓝牙耳机（黑色）
+                                            </p> 
+                                        </td> 
+                                        <td>￥<span>79</span></td> 
+                                        <td>1</td> 
+                                        <td>￥<span>79</span></td>
+                                    </tr> -->
+                            </tbody>
+            
+                        </table>
+                        <p class="toggler"><b></b>使用优惠券</p>
+                        <p class="toggler"><b></b>使用牛豆支付</p>
+                        <p class="toggler"><b></b>用回收代金券支付</p>
+                        <div class="right">
+                                <p><label>商品金额：</label> <span class="allprice">￥</span></p>
+                                <p ><label>运费：</label> <span>￥0</span></p>
+                                <p ><label>订单总额：</label> <span class="allprice">￥</span></p>
+
+                        </div>
+                        <div class="clear"></div>
+                        <p class="product"> <span>提交订单</span> </p>
+            </div>
+       
+    </main>
+    <footer></footer>
+</body>
+</html>

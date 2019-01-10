@@ -35,8 +35,8 @@ define(["jquery","cookie"], function($,cookie) {
                var a = target.className;//找到点击元素
                var tr = $(target).parents("tr");//找到当前行
             //    console.log($(target).parents("tr").find(".unitprice"));
-                var unitPrice = Number(tr.find(".unitprice").text()) ;
-                var allPrice = Number(tr.find(".allprice").text()) ;
+                // var unitPrice = Number(tr.find(".unitprice").text()) ;
+                // var allPrice = Number(tr.find(".allprice").text()) ;
                 var input =tr.find("input");
                 var n = Number(input.val());
                 // console.log(unitPrice,allPrice)
@@ -53,11 +53,13 @@ define(["jquery","cookie"], function($,cookie) {
                                 atr_i = i;
                             }
                         })
-                        console.log(atr_i);
                         _this.jison[atr_i].num =n;
-            
+                        _this.sums();            //计算总价
+                        let allPrice = Number(tr.find(".allprice").text()) ;
+                        _this.jison[atr_i].prices =allPrice;
+
                             _this.cook();      //转换cookie
-                            _this.sums();            //计算总价
+                          
                     break;
                     case "reduce"://-按钮
                     n===0?n=0:n--;
@@ -71,8 +73,12 @@ define(["jquery","cookie"], function($,cookie) {
                         }
                     })
                         _this.jison[atr_i].num =n;
-                        _this.cook();      //转换cookie
-                         _this.sums();            //计算总价
+
+                        _this.sums();            //计算总价
+                        let allPrice = Number(tr.find(".allprice").text()) ;
+                        _this.jison[atr_i].prices =allPrice;
+
+                            _this.cook();      //转换cookie
 
                 break;
                    case "remove"://删除按钮
@@ -105,7 +111,6 @@ define(["jquery","cookie"], function($,cookie) {
             var all = $(".payprice")
             let nums = $("input")
             console.log(nums);
-            console.log( $(".allprice"))
             var allprices = 0;
             //计算没一行的价格
             atr.each(function(i,item){//计算所有价格
@@ -115,17 +120,16 @@ define(["jquery","cookie"], function($,cookie) {
             })
             all.text(allprices);
        }
-       cook(){
+       cook(){//存cooike
             var trs = $("table tbody tr");
             this.jison = JSON.stringify(this.jison);
-            trs.length ? $.cookie("cart",this.jison, {expires: 3,path:"/"}) : $.cookie("cart", {expires: -1,path:"/"});
+           console.log(1,this.jison)
+            trs.length ? $.cookie("buycart",this.jison, {expires: 3,path:"/"}) : $.cookie("buycart", {expires: -1,path:"/"});
        }
        
-       fn() {   //将cookie转换为json对象；
+       fn() {   //将JSON字符转换为json对象；
         var cartcookie= $.cookie("buycart");
            this.jison= JSON.parse(cartcookie);
-            console.log(cartcookie);
-           console.log( this.jison);
        }
    }
 
