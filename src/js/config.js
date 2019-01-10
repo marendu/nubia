@@ -11,7 +11,9 @@ require.config({
     "template": "libs/template-web",
     "item" : "js/component/item",
     "cart":"js/Component/cart",
-    "buy" : "js/Component/buy"
+    "buy" : "js/Component/buy",
+    "buycart": "js/Component/buycart",
+    "list":"js/list"
 },
 //不符合AMD规范的模块，垫片
 shim: {

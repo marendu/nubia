@@ -22,13 +22,16 @@ define(["jquery", "template","buy"], ($, template,buy) => {
 						$(classname).html(html);
 						if(item==="item"){
 							_this.hover();
-							if(_this.flag){
-								_this.flag =false;
-							buy.init();
-
+							// if(_this.flag){
+							// 	_this.flag=false;
+							// 	buy.init()
+							// }
+							clearTimeout(_this.timer);
+							_this.timer =setTimeout(()=>{
+								buy.init();
+							},500)
 							}
 
-						}
 						if(item==="item.1"){
 							_this.hover_1();
 						}
@@ -56,16 +59,13 @@ define(["jquery", "template","buy"], ($, template,buy) => {
            //点击切换文字
             $(".main-right .eq").each(function(i){
                txt += $(".main-right .eq").eq(i).find(".ac").text()
-               console.log(i);
             })
             $("#allinner").text(txt)
             //点击切换总价
             $(".main-right .prices").each(function(i){
                 all+= Number($(".main-right .ac").find(".prices").eq(i).text())
-                console.log(all);
              })
              $(".allpay").text("￥"+all+".00")
-             console.log($(".main-right .prices"))
         });
         $(".main-right ul li").trigger("click");
 	}
@@ -86,8 +86,6 @@ define(["jquery", "template","buy"], ($, template,buy) => {
 		$(".prev").on("click",function(){
 			let ul =$(this).parent().find("ul");
 		   var left = $(this).parent().width();
-		   console.log(left);
-		   console.log(ul);
 		   var widths = $(this).parent().width();
 		   var left =ul.position().left;
 		   if(left==0){
@@ -100,13 +98,10 @@ define(["jquery", "template","buy"], ($, template,buy) => {
 	   $(".next").on("click",function(){
 		   let ul =$(this).parent().find("ul");
 		   var widths = $(this).parent().width();
-		   console.log(ul);
 		   var left =ul.position().left;
 		   if(left==-left+widths){
-			   console.log(left);
 			   ul.stop().animate({left:-left+widths},400)
 		   }else{
-			   console.log(left);
 			   ul.stop().animate({left:-widths},400)
 		   }
 		   
@@ -117,11 +112,11 @@ define(["jquery", "template","buy"], ($, template,buy) => {
 	   },function(){
 		   $(this).find(".select-wrap").stop().animate({height:0},400,function(){
 			   $(this).find("ul").css("left",0)
-			   console.log($(this).find("ul"))
 		   });
 		   
 	   })
 	}
+
 
 	return new Item();
 })

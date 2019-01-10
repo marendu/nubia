@@ -1,10 +1,15 @@
 require(["./config"],()=>{
-    require(["jquery","item","url","header","footer"],($,item,url)=>{
+    require(["jquery","item","url","buycart","header","footer"],($,item,url,buycart)=>{
         $(function(){
             item.init(url.rap+"/details","#fixed-left","details_item","details-template");
             item.init(url.rap+"/details-right","#main-rightinner_1","details_right","detailsright-template");
             item.init(url.rap+"/details-right","#cosservice","details_right1","detailsright1-template");
+            item.init(url.rap+"/details-right","#goods-imgs","goods-img","goods-template");
+            item.init(url.rap+"/details-right","#goods-img2","goods-img","goods-template");
 
+
+            buycart.init();
+            console.log(buycart);
             //导航
             var li_this=null;
             $("nav li").hover(function(){
@@ -46,6 +51,17 @@ require(["./config"],()=>{
                     $(".main-wrap #fixed-left").css({position:"fixed",top:0});
                 }
             });
+            //点击切换样式
+            $("#goods-p").on("click","span",function(){
+                $(this).addClass("ac").siblings().removeClass("ac");
+                if(this.id=="goodsds"){
+                    $(".goods-img2").removeClass("ac");
+                    $(".goods-img").addClass("ac");
+                }else{
+                    $(".goods-img").removeClass("ac");
+                    $(".goods-img2").addClass("ac");
+                }
+            })
 
         })
     })
