@@ -101,7 +101,10 @@ require(["./config"],()=>{
                                        window.location.href ="/index.html"
                                    };
                                  
+                            }else{
+                                alert("用户不存在")
                             }
+                            
                         },
                         dataType: "json"
                     })

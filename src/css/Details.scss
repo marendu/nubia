@@ -4,6 +4,7 @@
 main{
     min-height:1px;
     #title-wrap{
+        z-index: 999;
         display: none;
         border-top: 1px solid #b3adad;
         border-bottom: 1px solid #b3adad;
@@ -84,10 +85,13 @@ main{
             width: 565px;
             height: 730px;
         #fixed-left{
-            z-index: -1;
             text-align: center;
             width: 565px;
             height: 730px;
+            #bigimg{
+                width: 576px;
+                height: 576px;
+            }
             >ul{margin: 0 auto;
                 width: 384px;
                 height: 86px;

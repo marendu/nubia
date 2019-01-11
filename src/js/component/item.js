@@ -40,6 +40,9 @@ define(["jquery", "template","buy","cart"], ($, template,buy,cart) => {
 						if(item==="details_right"){
 							_this.details();
 						}
+						if(item==="details_item"){
+							_this.detailsimg();
+						}
 						
 					}
 				}
@@ -47,7 +50,15 @@ define(["jquery", "template","buy","cart"], ($, template,buy,cart) => {
 		})
 		
 	}
-
+	Item.prototype.detailsimg = function(){
+		console.log($("#smallimg"));
+		$("#smallimg").on("click","li",function(e){
+			var target = e.target || e.srcElement;
+			console.log($("#bigimg"),this)
+			$("#bigimg").attr("src",$(target).attr("src"))
+			$(this).addClass("ac").siblings().removeClass("ac");
+		})
+	}
 	Item.prototype.details = function(){
         //right点击事件
         $(".main-right ul li").on("click",function(){

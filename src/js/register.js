@@ -131,6 +131,8 @@ require(["./config"],()=>{
                                             if(res.res_code === 1){
                                                 alert("注册成功，马上去登录");
                                                 location.href = "/html/login.html";
+                                            }else{
+                                                alert("用户已存在")
                                             }
                                         },
                                         dataType: "json"
