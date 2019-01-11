@@ -13,6 +13,7 @@ define(["jquery","cookie"], function($,cookie) {
             console.log("buy");
             if( $.cookie("cart")){
                 var cartcookie= $.cookie("cart");
+
                  jison= JSON.parse(cartcookie);
                console.log(1,cartcookie);
             }

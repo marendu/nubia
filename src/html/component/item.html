@@ -5,7 +5,7 @@
                 <li data-id="{{ item.id }}" class="libuy">
                     <div class="list-goods">
                         <div class="list-top">
-                                <a  href="##"><img class="buyimg" src="{{item.img}}"></a>
+                                <a  href="/html/Details.html?{{item.id}}"><img class="buyimg" src="{{item.img}}"></a>
                             <div class="list-top-botm">
                                 <p class="buytitle">{{ item.title }}</p>
                                 <span class="buydescribe">{{ item.describe }}</span>
@@ -14,7 +14,7 @@
                         <div class="list-botm">
                             <div class="Price"><span>￥</span><span class="buyprice">{{item.price}}</span></div>
                             <div class="price-btn">
-                                <a class="btn-info" href="##">查看详情</a>
+                                <a class="btn-info buybtn" href="##">查看详情</a>
                                 <a class="btn-sell buybtn" href="##">立即购买</a>
                             </div>
                         </div>

@@ -17,7 +17,7 @@ define(["jquery","cookie"], function($,cookie) {
             <td><img src="${value.img}"></td>
              <td class="mleft"><a href="##">${value.describe}</a></td> 
              <td> ￥<span class="unitprice">${value.price}</span></td>
-              <td><div class="inputs"><span class="reduce">-</span> <input type="text" value="${value.num}"> <span class="add">+</span></div></td> 
+              <td><div class="inputs"><span class="reduce">-</span> <input type="text" class="blurs" value="${value.num}"> <span class="add">+</span></div></td> 
              <td >￥<span class="allprice"></span>.00</td> 
     <td><a title="删除" class="remove">×</a></td>
     </tr>`
@@ -58,6 +58,23 @@ define(["jquery","cookie"], function($,cookie) {
                             _this.cook();      //转换cookie
                           
                     break;
+                    case"blurs"://input框
+                    target.onblur =function(){
+                        if (typeof _this.jison ==="string") {//判断——this.jison是不是字符
+                            _this.fn();//调用解码
+                        }
+                        atr.each(function(i){//遍历找到点击所对应的json对象,找到就跳出;
+                            if(atr[i]===tr[0]){
+                                atr_i = i;
+                            }
+                        })
+                            _this.jison[atr_i].num =input.val();
+    
+                            _this.sums();            //计算总价
+                         
+                                _this.cook();      //转换cookie
+                    }
+                    break;
                     case "reduce"://-按钮
                     n===0?n=0:n--;
                     input.val(n);
@@ -89,6 +106,11 @@ define(["jquery","cookie"], function($,cookie) {
                             }
                         })
                         console.log(atr_i);
+                              let cart = $.cookie("cart");
+                                cart= JSON.parse(cart);
+                                cart.splice(atr_i,1);
+                                cart = JSON.stringify(cart);
+                                $.cookie("cart", cart,{expires:3,path:"/"});//修改订单的cookie；
 
                           _this.jison.splice(atr_i, 1);//在数组中删除相应的数组下标；
                            _this.sums();            //计算总价
@@ -123,6 +145,7 @@ define(["jquery","cookie"], function($,cookie) {
             $.cookie("buycart",this.jison, {expires: 3,path:"/"}) 
            }else{
             $.cookie("buycart", this.jison,{expires: -1,path:"/"});
+            $.cookie("cart", this.jison,{expires: -1,path:"/"});
              $("main").load("/html/component/cartEmpty.html");
            }
        }

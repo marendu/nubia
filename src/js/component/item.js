@@ -22,10 +22,6 @@ define(["jquery", "template","buy","cart"], ($, template,buy,cart) => {
 						$(classname).html(html);
 						if(item==="item"){
 							_this.hover();
-							// if(_this.flag){
-							// 	_this.flag=false;
-							// 	buy.init()
-							// }
 							clearTimeout(_this.timer);
 							_this.timer =setTimeout(()=>{
 								buy.init();
@@ -99,9 +95,22 @@ define(["jquery", "template","buy","cart"], ($, template,buy,cart) => {
 		var jison= JSON.parse(cartcookie);
 		
 		// console.log(cartcookie);
+		let flag = true;
 		for(var value of res.res_body.data){
 			if(value.id == data_id){
+				console.log(value);
+				for(var key of jison){
+					if(key.id == data_id){
+						console.log(key.num)
+						key.num +=1;
+					console.log(key);
+						flag =false;
+						break;
+					}
+				}
+				if(flag){
 				jison.push(value);
+				}
 				jison = JSON.stringify(jison);
 				$.cookie("buycart",jison, {expires: 3,path:"/"}) 
 				cart.init();

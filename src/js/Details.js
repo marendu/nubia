@@ -6,13 +6,33 @@ require(["./config"],()=>{
             item.init(url.rap+"/details-right","#cosservice","details_right1","detailsright1-template");
             item.init(url.rap+"/details-right","#goods-imgs","goods-img","goods-template");
             item.init(url.rap+"/details-right","#goods-img2","goods-img","goods-template");
+           //通过点击图片请求数据库，
 
             $(".buycart").on("click",function(){
-                console.log(222)
+           var id =parseInt(location.search.slice(1));
+           console.log(location.search.slice(1))
+           if(id){
+            $.ajax({
+                url:url.rap+"/goods",
+                tape:"get",
+                success:function(res){
+                    if(res.res_code===1){
+                        for(var value of res.res_body.data){//模拟数据库
+                            if(value.id ==id){
+                                buycart.init(value,id)
+                                break;
+                            }
+                        }
+                    }
+                }
+
+           })
+           }else{
                 buycart.init();
+           }
+          
             })
            
-            console.log(buycart);
             //导航
             var li_this=null;
             $("nav li").hover(function(){
